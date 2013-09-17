@@ -3,7 +3,7 @@ extends ../layout
 block content
 
   //- Intro
-  section#intro.s-intro(data-resize="1100")
+  section#intro.s-intro
     //if lte IE 8
       .ie-bg: img(src=assets.url('/images/bg.jpg'))
     .l-constrained
@@ -39,7 +39,7 @@ block content
         h1 Where You Stood
         p Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
 
-      article.s-details--column
+      article.s-details--column.ie-omega
         .s-details--icon
           img(src=assets.url('/images/compass.png'))
         h1 Data To Find Your Way Back

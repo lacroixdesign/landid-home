@@ -24,10 +24,8 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-// app.use(express.cookieParser('_nodejs_blueprint_b2685bd0cb02e1049a903e3359c3903e3bbe'));
-// app.use(express.session());
 app.use(express.cookieParser());
-app.use(express.cookieSession({ secret: '_nodejs_blueprint_b2685bd0cb02e1049a903e3359c3903e3bbe' }));
+app.use(express.cookieSession({ secret: '_landid_splash_8502e10234523fd449a90ba390' }));
 app.use(express.csrf());
 
 // csrf

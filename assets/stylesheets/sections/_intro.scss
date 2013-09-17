@@ -2,8 +2,28 @@
   padding: 2em 0;
   background: $orange image-url("bg.jpg") no-repeat center top fixed;
   -webkit-background-size: cover;
+  overflow-y: hidden;
   background-size: cover;
   color: $white;
+
+  @include media-ie {
+    background-image: none;
+    > * { position: relative; }
+  }
+
+  .ie-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: -25%;
+    width: 150%;
+
+    img {
+      width: 100%;
+      margin-left: 0;
+    }
+
+  } // .ie-bg
 
   .s-intro--logo {
     max-width: 15em;
@@ -73,6 +93,7 @@
       padding: 10em 0;
       max-width: none;
       @include span-columns(6);
+      @include omega;
     }
 
     .s-intro--download {
