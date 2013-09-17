@@ -6,10 +6,6 @@ if(process.env.NEW_RELIC_LICENSE_KEY) {
 var express  = require('express')
   , http     = require('http')
   , path     = require('path');
-  // , util     = require('util')
-  // , moment   = require('moment')
-  // , rack     = require('asset-rack')
-  // , mongoose = require('mongoose');
 
 var app = module.exports = express();
 
@@ -30,8 +26,8 @@ app.use(express.csrf());
 
 // csrf
 app.use(function(req, res, next){
-  res.locals.token = req.session._csrf;
-  res.cookie('XSRF-TOKEN', req.session._csrf);
+  res.locals.token = req.csrfToken();
+  res.cookie('XSRF-TOKEN', req.csrfToken());
   next();
 });
 
