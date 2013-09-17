@@ -38,8 +38,8 @@ html(lang="en")
     link(rel="apple-touch-icon-precomposed", sizes="72x72", href="/apple-touch-icon-72x72-precomposed.png")
     link(rel="apple-touch-icon-precomposed", sizes="114x114", href="/apple-touch-icon-114x114-precomposed.png")
     link(rel="apple-touch-icon-precomposed", sizes="144x144", href="/apple-touch-icon-144x144-precomposed.png")
-    //- meta(name="msapplication-TileColor", content="#ffffff")
-    //- meta(name="msapplication-TileImage", content="/windows-icon.png")
+    meta(name="msapplication-TileColor", content="#ed462f")
+    meta(name="msapplication-TileImage", content="/windows-icon.png")
     meta(name="viewport", content="initial-scale=1.0, user-scalable=no, maximum-scale=1.0")
     meta(name="apple-mobile-web-app-capable", content="yes")
     meta(name="apple-mobile-web-app-status-bar-style", content="black")
@@ -53,10 +53,8 @@ html(lang="en")
     //[if lt IE 9]
       script(src='/javascripts/polyfills.js', type='text/javascript')
 
-    //- koko wa Typekit -- replace VVVVVVV with the proper kit code
-    // script(type="text/javascript", src="//use.typekit.net/VVVVVVV.js")
-    // script.
-    //   try{Typekit.load();}catch(e){}
+    //- koko wa Google Web Fonts
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600', rel='stylesheet', type='text/css')
 
     //- koko wa Google Analytics
     if process.env.GOOGLE_ANALYTICS_KEY && process.env.GOOGLE_ANALYTICS_DOMAIN
@@ -89,16 +87,26 @@ html(lang="en")
     include _mixins
     block content
 
-    if isDevelopment()
-      p: small Development Environment
-    if isProduction()
-      p: small Production Environment
-    p: small NODE_ENV: #{process.env.NODE_ENV}
-    img(src=assets.url('/images/lacroix-logo.png'))
-    p: +icon('000')
-    p: a.btn(href="#") Standard Button
-    form(style="max-width: 20em;")
-      input(type="email", placeholder="Email address")
+    footer#footer
+      .l-constrained
+        ul.footer-icons
+          li
+            a(href="https://facebook.com", target="_blank")
+              +icon("001")
+          li
+            a(href="https://www.twitter.com", target="_blank")
+              +icon("000")
+          li
+            a(href="http://tumblr.com/", target="_blank")
+              +icon("002")
+          li
+            a(href="mailto:info@landid.com")
+              +icon("003")
+
+        ul.footer-legal
+          li &copy;2013 Frontback
+          li &bull;
+          li: a(href="#", target="_blank") Terms &amp; Privacy
 
 
     //- koko wa Width Plugin
