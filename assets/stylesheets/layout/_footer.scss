@@ -4,7 +4,7 @@
     @include unstyled-list;
     margin: 0 auto;
     padding: 2em 0 1em 0;
-    color: $light-grey;
+    color: $grey;
     font-size: 1.5em;
     text-align: center;
 
@@ -14,11 +14,11 @@
     }
 
     a:hover {
-      color: lighten($light-grey, 15%);
+      color: $orange;
     }
 
     a:active {
-      color: darken($light-grey, 15%);
+      color: darken($orange, 10%);
     }
 
   } // .footer-icons
@@ -27,7 +27,7 @@
     @include unstyled-list;
     margin: 0 auto;
     padding: 1em;
-    color: $light-grey;
+    color: $grey;
     font-size: .75em;
     text-align: center;
 
@@ -37,12 +37,12 @@
     }
 
     a:hover {
-      color: lighten($light-grey, 5%);
-      text-decoration: underline;
+      color: lighten($grey, 5%);
+      border-bottom: 1px solid $grey;
     }
 
     a:active {
-      color: darken($light-grey, 5%);
+      color: darken($grey, 5%);
     }
 
   } // .footer-legal
