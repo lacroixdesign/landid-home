@@ -44,10 +44,8 @@ html(lang="en")
     meta(name="msapplication-TileImage", content="/windows-icon.png")
 
     != assets.tag('/stylesheets/application.css')
-    != assets.tag('/javascripts/application.js')
-
-    //- Google Web Fonts
     link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600', rel='stylesheet', type='text/css')
+    != assets.tag('/javascripts/application.js')
 
     //- Google Analytics
     if process.env.GOOGLE_ANALYTICS_KEY && process.env.GOOGLE_ANALYTICS_DOMAIN
